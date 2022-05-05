@@ -1,0 +1,31 @@
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Password</th>
+    <th>Age</th>
+    <th>Action</th>
+  </tr>
+ 
+    <% @users.map do |user| %>
+    <tr>
+      <td> <%= user.id %> </td>
+      <td> <%= user.name %> </td>
+      <td> <%= user.email%> </td>
+      <td> <%= user.password%> </td>
+      <td> <%= user.age%> </td>
+      <td> <%= link_to "view", user_path(user) %>  
+        <%= link_to "Edit", edit_user_path(user) %>
+        <%= link_to "Delete", user_path(user), method: :Delete %>
+        </td>
+    </tr>
+    <% end %>
+    <%= link_to "<button>tao moi</button>".html_safe, new_user_path %>
+  
+</table>
+<style>
+  table, th, td  {
+    border: 1px solid black;
+  }
+</style>

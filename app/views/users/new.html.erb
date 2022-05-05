@@ -1,0 +1,8 @@
+tao bang dang ki danh sach
+<%= form_for @user, url: users_path do |f| %>
+  Name: <%= f.text_field :name %></br>
+  Email : <%= f.text_area :email %></br>
+  Password : <%= f.text_field :password %></br>
+  Age : <%= f.text_field :age %></br>
+  <%= f.submit %>
+<%end%>
